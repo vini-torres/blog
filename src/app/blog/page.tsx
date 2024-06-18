@@ -1,3 +1,5 @@
 export default function Blog() {
-  return <h1 className="">Blog</h1>
+  return (
+    <section className="mx-auto h-screen max-w-7xl px-2 py-24">Blog</section>
+  )
 }

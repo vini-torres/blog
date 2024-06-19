@@ -29,7 +29,7 @@ export default function DarkMode() {
   return (
     <button
       onClick={handleThemeChange}
-      className="relative flex h-[1.875rem] w-16 items-center justify-center gap-3 rounded-3xl border border-light-100 dark:border-dark-500"
+      className="relative flex h-[1.875rem] w-16 items-center justify-center gap-3 rounded-3xl border border-light-100 focus:outline-none dark:border-dark-500"
     >
       <Sun
         size={17}

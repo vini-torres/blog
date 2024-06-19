@@ -1,5 +1,3 @@
-'use client'
-
 import Article from '@/components/Article'
 import Post from '@/components/Post'
 import Tag from '@/components/Tag'

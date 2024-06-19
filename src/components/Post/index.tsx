@@ -11,8 +11,12 @@ interface PostProps {
   createdAt: Date
 }
 
-export default function Post({ createdAt, tag, title }: PostProps) {
-  const date = moment(createdAt).format('LL')
+interface Props {
+  post: PostProps
+}
+
+export default function Post({ post }: Props) {
+  const date = moment(post.createdAt).format('LL')
   return (
     <Link
       href=""
@@ -29,7 +33,7 @@ export default function Post({ createdAt, tag, title }: PostProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold capitalize text-[white]">
-              {tag}
+              {post.tag}
             </span>
             <span className="text-sm font-light text-light-300">
               {String(date)}
@@ -37,7 +41,7 @@ export default function Post({ createdAt, tag, title }: PostProps) {
           </div>
           <Send size={14} className="text-[white]" />
         </div>
-        <h2 className="text-xl font-semibold text-[white]">{title}</h2>
+        <h2 className="text-xl font-semibold text-[white]">{post.title}</h2>
       </div>
     </Link>
   )

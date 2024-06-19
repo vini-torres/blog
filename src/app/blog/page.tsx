@@ -1,9 +1,16 @@
+'use client'
+
+import { useState } from 'react'
+
 import Article from '@/components/Article'
+import LoadMore from '@/components/LoadMore'
 import Post from '@/components/Post'
 import Tag from '@/components/Tag'
 import { api } from '@/lib/api'
 
 export default function Blog() {
+  const [peerPage, setPeerPage] = useState(0)
+
   const allTags = [
     { label: 'All Posts', isActive: true },
     { label: 'Front-end' },
@@ -11,16 +18,18 @@ export default function Blog() {
     { label: 'Mobile' },
   ]
 
-  const getLatestPosts = api.sort(
+  const allPosts = api.sort(
     (a, b) => b.createdAt.getTime() - a.createdAt.getTime(),
   )
+  const trendingPosts = allPosts.slice(0, 5)
+  const othersPosts = allPosts.slice(5, 9 + peerPage)
 
-  const trendingPosts = getLatestPosts.slice(0, 5)
-  const othersPosts = getLatestPosts.slice(5, 9)
+  const handleLoadMore = () => {
+    setPeerPage((state) => state + 4)
+  }
 
-  console.log(getLatestPosts)
   return (
-    <section className="mx-auto max-w-7xl space-y-6 px-2 py-24">
+    <section className="mx-auto mb-16 max-w-7xl space-y-6 px-2 pt-24">
       <header className="space-y-10 border-b border-light-100 pb-3 dark:border-dark-500">
         <h1 className="text-xl dark:text-light-100">All Posts</h1>
         <div className="flex items-center gap-[0.625rem]">
@@ -50,6 +59,10 @@ export default function Blog() {
             <Article key={index} article={article} />
           ))}
         </div>
+      </div>
+
+      <div className="flex">
+        <LoadMore onClick={handleLoadMore} />
       </div>
     </section>
   )

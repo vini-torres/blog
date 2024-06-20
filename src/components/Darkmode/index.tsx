@@ -29,22 +29,22 @@ export default function DarkMode() {
   return (
     <button
       onClick={handleThemeChange}
-      className="relative flex h-[1.875rem] w-16 items-center justify-center gap-3 rounded-3xl border border-light-100 focus:outline-none dark:border-dark-500"
+      className="relative flex h-[1.875rem] w-16 items-center justify-center gap-3 rounded-3xl border border-light-100 focus:outline-none dark:border-light-700"
     >
       <Sun
         size={17}
-        className="rounded-full text-light-300 dark:text-dark-200"
+        className="rounded-full text-light-300 dark:text-dark-100"
       />
       <div
         className={cx(
-          'absolute h-6 w-6 rounded-full bg-light-600 transition-transform duration-500 dark:bg-light-700',
+          'absolute h-6 w-6 rounded-full bg-light-600 transition-transform duration-500',
           {
             'translate-x-4': theme,
             '-translate-x-4': !theme,
           },
         )}
       />
-      <Moon size={17} className="text-light-300 dark:text-dark-200" />
+      <Moon size={17} className="text-light-300 dark:text-dark-100" />
     </button>
   )
 }

@@ -19,7 +19,7 @@ export default function Article({ article }: Props) {
   return (
     <Link
       href=""
-      className="h-[16.875rem] space-y-4 rounded border border-light-100 p-10 transition-colors duration-200 hover:bg-light-100 dark:border-dark-500 dark:hover:bg-dark-500"
+      className="h-[16.875rem] space-y-4 rounded border border-light-100 p-10 transition-colors duration-200 hover:bg-light-100 dark:border-light-700 dark:hover:bg-dark-500"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">

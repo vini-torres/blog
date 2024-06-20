@@ -30,7 +30,7 @@ export default function Blog() {
 
   return (
     <section className="mx-auto mb-16 max-w-7xl space-y-6 px-2 pt-24">
-      <header className="space-y-10 border-b border-light-100 pb-3 dark:border-dark-500">
+      <header className="space-y-10 border-b border-light-100 pb-3 dark:border-light-700">
         <h1 className="text-xl dark:text-light-100">All Posts</h1>
         <div className="flex flex-wrap items-center gap-[0.625rem] sm:flex-nowrap">
           {allTags.map((tag, index) => (

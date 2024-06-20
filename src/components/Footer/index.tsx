@@ -2,7 +2,7 @@ import SignIn from '../SignIn'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-light-100 p-8 dark:border-dark-500">
+    <footer className="border-t border-light-100 p-8 dark:border-light-700">
       <div className="mx-auto my-7 flex max-w-7xl flex-col justify-center gap-8 px-2 sm:flex-row sm:gap-24">
         <span>Logo</span>
         <div className="max-w-[28.125rem]">
@@ -16,10 +16,10 @@ export default function Footer() {
             Crie sua conta ou acesse para ter acesso a todos os nosso conteúdos
             do mundo da programação.
           </p>
-          <SignIn />
+          <SignIn className="dark:bg-dark-400 dark:hover:bg-dark-500" />
         </div>
       </div>
-      <p className="w-full text-center text-sm font-medium text-light-500 dark:text-dark-200">
+      <p className="w-full text-center text-sm font-medium text-light-500 dark:text-light-300">
         Todos os direitos reservados
       </p>
     </footer>

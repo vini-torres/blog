@@ -29,7 +29,7 @@ export default function Post({ post }: Props) {
         width={400}
         className="absolute h-full rounded object-contain"
       />
-      <div className="absolute flex h-full w-full flex-col justify-between rounded bg-[linear-gradient(rgb(0,0,0,.1),55%,rgb(0,0,0))] p-6">
+      <div className="absolute flex h-full w-full flex-col justify-between rounded bg-[linear-gradient(rgb(0,0,0,.1),45%,rgb(0,0,0))] p-6 shadow-md">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold capitalize text-[white]">

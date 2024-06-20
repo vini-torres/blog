@@ -20,7 +20,7 @@ export default function Post({ post }: Props) {
   return (
     <Link
       href=""
-      className="relative min-h-[14.0625rem] w-full max-w-[25rem] rounded"
+      className="relative min-h-[14.0625rem] w-full rounded sm:max-w-[25rem]"
     >
       <Image
         src="../google.svg"
@@ -41,7 +41,9 @@ export default function Post({ post }: Props) {
           </div>
           <Send size={14} className="text-[white]" />
         </div>
-        <h2 className="text-xl font-semibold text-[white]">{post.title}</h2>
+        <h2 className="text-lg font-semibold text-[white] sm:text-xl">
+          {post.title}
+        </h2>
       </div>
     </Link>
   )

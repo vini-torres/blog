@@ -27,6 +27,11 @@ const config: Config = {
         600: '#171717',
       },
     },
+    screens: {
+      xsm: '500px',
+      sm: '640px',
+      xmd: '750px',
+    },
   },
   plugins: [],
 }

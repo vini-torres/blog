@@ -32,10 +32,10 @@ export default function Article({ article }: Props) {
         </div>
         <Send size={14} className="text-dark-600 dark:text-white" />
       </div>
-      <h3 className="text-2xl font-semibold text-black dark:text-white">
+      <h3 className="text-xl font-semibold text-black dark:text-white sm:text-2xl">
         {article.title}
       </h3>
-      <p className="text-sm text-light-700 dark:text-dark-100">
+      <p className="line-clamp-3 text-sm text-light-700 dark:text-dark-100">
         {article.description}
       </p>
     </Link>

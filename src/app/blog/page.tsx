@@ -23,9 +23,15 @@ export default function Blog() {
   )
   const trendingPosts = allPosts.slice(0, 5)
   const othersPosts = allPosts.slice(5, 9 + peerPage)
+  const isActiveButton = othersPosts.length === 10
 
   const handleLoadMore = () => {
-    setPeerPage((state) => state + 4)
+    if (othersPosts.length < 10) {
+      const postsRemaining = 10 - othersPosts.length
+      const postsToAdd = Math.min(4, postsRemaining)
+
+      return setPeerPage((state) => state + postsToAdd)
+    }
   }
 
   return (
@@ -43,7 +49,7 @@ export default function Blog() {
         <h2 className="text-lg text-light-700 dark:text-light-200">
           Trending Posts
         </h2>
-        <div className="xsm:grid-cols-2 xmd:grid-cols-3 xsm:[&>*:first-child]:row-span-2 grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4 xsm:grid-cols-2 xmd:grid-cols-3 xsm:[&>*:first-child]:row-span-2">
           {trendingPosts.map((post, index) => (
             <Post key={index} post={post} />
           ))}
@@ -62,7 +68,7 @@ export default function Blog() {
       </div>
 
       <div className="flex">
-        <LoadMore onClick={handleLoadMore} />
+        <LoadMore onClick={handleLoadMore} isActive={isActiveButton} />
       </div>
     </section>
   )

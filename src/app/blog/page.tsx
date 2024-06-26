@@ -3,9 +3,9 @@
 import { useState } from 'react'
 
 import Article from '@/components/Article'
+import Filter from '@/components/Filter'
 import LoadMore from '@/components/LoadMore'
 import Post from '@/components/Post'
-import Tag from '@/components/Tag'
 import { api } from '@/lib/api'
 
 export default function Blog() {
@@ -40,7 +40,7 @@ export default function Blog() {
         <h1 className="text-xl dark:text-light-100">All Posts</h1>
         <div className="flex flex-wrap items-center gap-[0.625rem] sm:flex-nowrap">
           {allTags.map((tag, index) => (
-            <Tag key={index} label={tag.label} isActive={tag.isActive} />
+            <Filter key={index} label={tag.label} isActive={tag.isActive} />
           ))}
         </div>
       </header>

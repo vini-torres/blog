@@ -55,27 +55,25 @@ export default function Post() {
           </div>
         </div>
       </header>
-      <div className="my-8">
-        <div className="grid grid-cols-[18.75rem,1fr] gap-9">
-          <aside className="space-y-3 border-r border-light-100 pr-5 dark:border-light-700">
-            <h4 className="text-sm font-semibold text-light-400 dark:text-light-300">
-              Content
-            </h4>
-            <ul className="flex flex-col gap-[0.625rem]">
-              {contentLinks.map((link, index) => (
-                <li key={index}>
-                  <LinkItem
-                    content={link.content}
-                    href={link.href}
-                    isActive={link.isActive}
-                  />
-                </li>
-              ))}
-              <li></li>
-            </ul>
-          </aside>
-          <section className="">Content</section>
-        </div>
+
+      <div className="relative my-8 grid grid-cols-[300px,1fr] gap-9">
+        <aside className="sticky top-20 h-fit space-y-3 border-r border-light-100 pr-5 dark:border-light-700">
+          <span className="block text-sm font-semibold text-light-400 dark:text-light-300">
+            Content
+          </span>
+          <ul className="flex flex-col gap-[0.625rem]">
+            {contentLinks.map((link, index) => (
+              <li key={index}>
+                <LinkItem
+                  content={link.content}
+                  href={link.href}
+                  isActive={link.isActive}
+                />
+              </li>
+            ))}
+          </ul>
+        </aside>
+        <article className="">Content</article>
       </div>
     </section>
   )

@@ -5,11 +5,22 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 
+import LinkItem from '@/components/Link'
 import ProgressBar from '@/components/ProgressBar'
 import Tag from '@/components/Tag'
 
 export default function Post() {
   const mainRef = useRef<HTMLElement | null>(null)
+
+  const contentLinks = [
+    { content: 'O que é Tailwind css', href: '', isActive: true },
+    { content: 'Vantagens do Tailwind CSS', href: '', isActive: false },
+    {
+      content: 'Vantagens da integração Tailwind + Next',
+      href: '',
+      isActive: false,
+    },
+  ]
 
   return (
     <section className="mx-auto max-w-7xl px-2 pt-24" ref={mainRef}>
@@ -44,11 +55,27 @@ export default function Post() {
           </div>
         </div>
       </header>
-      <div>
-        <div className="h-screen w-full" />
-        <div className="h-screen w-full" />
-        <div className="h-screen w-full" />
-        <div className="h-screen w-full" />
+      <div className="my-8">
+        <div className="grid grid-cols-[18.75rem,1fr] gap-9">
+          <aside className="space-y-3 border-r border-light-100 pr-5 dark:border-light-700">
+            <h4 className="text-sm font-semibold text-light-400 dark:text-light-300">
+              Content
+            </h4>
+            <ul className="flex flex-col gap-[0.625rem]">
+              {contentLinks.map((link, index) => (
+                <li key={index}>
+                  <LinkItem
+                    content={link.content}
+                    href={link.href}
+                    isActive={link.isActive}
+                  />
+                </li>
+              ))}
+              <li></li>
+            </ul>
+          </aside>
+          <section className="">Content</section>
+        </div>
       </div>
     </section>
   )

@@ -15,7 +15,7 @@ interface Props {
   post: PostProps
 }
 
-export default function Post({ post }: Props) {
+export default function PostCard({ post }: Props) {
   const date = moment(post.createdAt).format('LL')
   return (
     <Link

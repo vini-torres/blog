@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Article from '@/components/Article'
 import Filter from '@/components/Filter'
 import LoadMore from '@/components/LoadMore'
-import Post from '@/components/Post'
+import PostCard from '@/components/Post'
 import { api } from '@/lib/api'
 
 export default function Blog() {
@@ -51,7 +51,7 @@ export default function Blog() {
         </h2>
         <div className="grid grid-cols-1 gap-4 xsm:grid-cols-2 xmd:grid-cols-3 xsm:[&>*:first-child]:row-span-2">
           {trendingPosts.map((post, index) => (
-            <Post key={index} post={post} />
+            <PostCard key={index} post={post} />
           ))}
         </div>
       </div>

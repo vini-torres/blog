@@ -6,8 +6,10 @@ import Link from 'next/link'
 import { useRef } from 'react'
 
 import LinkItem from '@/components/Link'
+import PostCard from '@/components/Post'
 import ProgressBar from '@/components/ProgressBar'
 import Tag from '@/components/Tag'
+import { api } from '@/lib/api'
 
 export default function Post() {
   const mainRef = useRef<HTMLElement | null>(null)
@@ -21,6 +23,8 @@ export default function Post() {
       isActive: false,
     },
   ]
+
+  const mock = api.slice(0, 3)
 
   return (
     <section className="mx-auto max-w-7xl px-2 pt-24" ref={mainRef}>
@@ -74,6 +78,16 @@ export default function Post() {
           </ul>
         </aside>
         <article className="">Content</article>
+      </div>
+      <div className="mt-16 space-y-7">
+        <h3 className="font-medium text-light-700 dark:text-light-200">
+          Posts semelhantes
+        </h3>
+        <div className="flex flex-wrap gap-3 sm:flex-nowrap">
+          {mock.map((post, index) => (
+            <PostCard key={index} post={post} />
+          ))}
+        </div>
       </div>
     </section>
   )

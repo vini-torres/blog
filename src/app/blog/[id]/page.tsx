@@ -1,19 +1,13 @@
-'use client'
-
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef } from 'react'
 
 import LinkItem from '@/components/Link'
 import PostCard from '@/components/Post'
-import ProgressBar from '@/components/ProgressBar'
 import Tag from '@/components/Tag'
 import { api } from '@/lib/api'
 
 export default function Post() {
-  const mainRef = useRef<HTMLElement | null>(null)
-
   const contentLinks = [
     { content: 'O que é Tailwind css', href: '', isActive: true },
     { content: 'Vantagens do Tailwind CSS', href: '', isActive: false },
@@ -27,9 +21,8 @@ export default function Post() {
   const mock = api.slice(0, 3)
 
   return (
-    <section className="mx-auto max-w-7xl px-2 pt-24" ref={mainRef}>
-      <ProgressBar target={mainRef} />
-      <header className="border-b border-light-100 py-5 dark:border-light-700 dark:bg-dark-600">
+    <section className="mx-auto max-w-7xl px-2 pt-24">
+      <header className="border-b border-light-100 py-5 dark:border-light-700">
         <Link href="/blog" className="flex items-center gap-[0.625rem]">
           <ArrowLeft size={16} className="text-light-500 dark:text-light-300" />
           <span className="text-sm font-light leading-none text-light-500 dark:text-light-300">
@@ -60,8 +53,8 @@ export default function Post() {
         </div>
       </header>
 
-      <div className="relative my-8 grid grid-cols-[300px,1fr] gap-9">
-        <aside className="sticky top-20 h-fit space-y-3 border-r border-light-100 pr-5 dark:border-light-700">
+      <div className="relative my-8 grid gap-9 xmd:grid-cols-[300px,1fr]">
+        <aside className="sticky top-20 hidden h-fit space-y-3 border-r border-light-100 pr-5 dark:border-light-700 xmd:block">
           <span className="block text-sm font-semibold text-light-400 dark:text-light-300">
             Content
           </span>

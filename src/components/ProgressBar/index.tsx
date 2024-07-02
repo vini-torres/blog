@@ -30,7 +30,7 @@ export default function ProgressBar({ target }: ProgressBarProps) {
   }, [scrollListener])
 
   return (
-    <div className="fixed left-0 right-0 top-[3.5rem]">
+    <div className="fixed left-0 right-0 top-[3.5rem] z-10">
       <div
         className={`h-[0.1875rem] rounded bg-[#29518d]`}
         style={{
